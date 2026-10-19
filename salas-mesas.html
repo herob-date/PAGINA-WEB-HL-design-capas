@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesas de Centro, Consolas y Butacas | HL Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Source+Serif+4:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { hl: { cream: '#E4D1AC', sand: '#CEBFAB', wood: '#6B371D', dark: '#402E20', terracotta: '#C9745A', sage: '#ADB698', light: '#F7F3EB' } } } }
+        }
+    </script>
+    <style>
+        body { font-family: 'Source Serif 4', serif; background-color: #F7F3EB; color: #402E20; }
+        h1, h2, h3, .font-brand { font-family: 'Aoboshi One', serif; }
+        .hl-logo-box { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; position: relative; line-height: 1; }
+        .hl-logo-letters { font-family: 'Aoboshi One', serif; font-size: 2.6rem; letter-spacing: 0.12em; color: #402E20; font-weight: bold; }
+        .hl-logo-band { background-color: #F7F3EB; padding: 1px 6px; position: absolute; top: 50%; transform: translateY(-50%); width: 105%; text-align: center; font-family: 'Source Serif 4', serif; font-size: 0.55rem; letter-spacing: 0.42em; color: #402E20; font-weight: 600; text-indent: 0.42em; }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-[#F7F3EB]/95 backdrop-blur-md sticky top-0 z-40 border-b border-hl-sand/60">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="hl-logo-box"><span class="hl-logo-letters">HL</span><span class="hl-logo-band">DESIGN</span></a>
+            <nav class="hidden lg:flex space-x-6 text-sm font-semibold text-hl-dark">
+                <a href="index.html" class="hover:text-hl-terracotta">Inicio</a>
+                <a href="terrazas.html" class="hover:text-hl-terracotta">Terrazas</a>
+                <a href="comedores.html" class="hover:text-hl-terracotta">Comedores</a>
+                <a href="salas-mesas.html" class="text-hl-wood font-bold">Mesas & Consolas</a>
+            </nav>
+            <a href="https://wa.me/51966327706?text=Hola%20HL%20Design,%20deseo%20cotizar%20mesas%20o%20consolas." target="_blank" class="bg-hl-dark text-hl-cream text-xs px-5 py-2.5 rounded uppercase font-semibold"><i class="fab fa-whatsapp"></i> Cotizar</a>
+        </div>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-hl-terracotta uppercase tracking-widest text-xs font-bold">Detalles que Transforman Espacios</span>
+            <h1 class="text-3xl md:text-5xl mt-2 mb-3 text-hl-dark">Mesas de Centro, Consolas y Butacas</h1>
+            <p class="text-hl-wood/90 text-sm">Piezas de diseño contemporáneo elaboradas con madera, piedra sinterizada, mármol y acero.</p>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+    <!-- Modal Lightbox -->
+    <div id="lightbox-modal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4 cursor-pointer" onclick="closeLightbox()">
+        <div class="relative max-w-4xl max-h-[90vh]">
+            <button class="absolute -top-10 right-0 text-white text-3xl font-bold">&times;</button>
+            <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] object-contain rounded shadow-2xl">
+        </div>
+    </div>
+
+    <script>
+        const WHATSAPP_NUMBER = "51966327706";
+        const products = [
+            { id: "mc-mm61", badge: "Destacado", title: "Mesa de Centro MM61 y MP60", subtitle: "Base Alistonada en Madera", desc: "Fabricadas en madera y enchape de madera nacional o importado en acabado satinado.", img: "https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=700&q=80", options: [{ label: "Modelo MM61 Individual", price: 950 }, { label: "Modelo MP60 Dúo", price: 1500 }] },
+            { id: "mc-mfv74", badge: "Dúo Piedra", title: "Mesa Dúo MFV74 y MMF76", subtitle: "Piedra Sinterizada / Vidrio Bronce", desc: "Bases en metal pintado al horno y tableros exclusivos de alta durabilidad.", img: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&w=700&q=80", options: [{ label: "MMF76 Dúo Piedra Sinterizada", price: 950 }, { label: "MFV74 Dúo Vidrio Bronce", price: 1650 }] },
+            { id: "con-cc0125", badge: "Recibidores", title: "Consola CC0125 y CC0126", subtitle: "Madera y Opciones en Mármol / Piedra", desc: "Recibidores elegantes en 3 medidas con opción de piedra sinterizada o mármol.", img: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=700&q=80", options: [{ label: "CC0125 - 100x30 cm", price: 1200 }, { label: "CC0125 - 125x30 cm", price: 1400 }, { label: "CC0125 - 150x30 cm", price: 1600 }, { label: "CC0126 Con Mármol - 100 cm", price: 1450 }] },
+            { id: "but-bt01", badge: "Confort", title: "Butacas BT01 al BT09", subtitle: "Espuma Zebra y Madera Tornillo", desc: "Tapizadas en tela o cuero con gran variedad de colores en tendencia.", img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=700&q=80", options: [{ label: "COD-BT05", price: 850 }, { label: "COD-BT03", price: 950 }, { label: "COD-BT06 / BT09", price: 950 }, { label: "COD-BT07 / BT08", price: 1050 }] },
+            { id: "ban-altos", badge: "Catálogo 2027", title: "Bancos Altos de Barra", subtitle: "Fabricados a la medida de tu barra", desc: "Modelos Berlín, Oxa, Isma, Madrid, París, Milán y Sofía (A partir de 3 unidades).", img: "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=700&q=80", options: [{ label: "Modelo Berlín (C/u)", price: 290 }, { label: "Modelo Oxa (C/u)", price: 320 }, { label: "Modelo Isma (C/u)", price: 350 }, { label: "Modelo Madrid / Belén (C/u)", price: 390 }, { label: "Modelo París (C/u)", price: 420 }] }
+        ];
+
+        const grid = document.getElementById('product-grid');
+        products.forEach(prod => {
+            const optionsHtml = prod.options.map((opt, i) => `<option value="${i}">${opt.label} — S/ ${opt.price.toLocaleString('es-PE')}</option>`).join('');
+            const card = document.createElement('div');
+            card.className = "bg-white border border-hl-sand/80 rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between";
+            card.innerHTML = `
+                <div>
+                    <div class="h-64 bg-hl-cream/30 relative overflow-hidden group cursor-pointer" onclick="openLightbox('${prod.img}')">
+                        <img src="${prod.img}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-hl-dark text-hl-cream text-[11px] uppercase px-3 py-1 font-semibold">${prod.badge}</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-hl-terracotta font-semibold uppercase">${prod.subtitle}</span>
+                        <h3 class="text-xl text-hl-dark mt-1 mb-2">${prod.title}</h3>
+                        <p class="text-xs text-hl-dark/80 mb-4">${prod.desc}</p>
+                        <label class="block text-[11px] uppercase text-hl-wood font-bold mb-1">Elige Tono de Madera:</label>
+                        <select id="tono-${prod.id}" class="w-full bg-[#F7F3EB] border border-hl-sand text-hl-dark text-xs p-2 rounded mb-2">
+                            <option value="Tono 1">Tono 1 (Claro Natural)</option><option value="Tono 2">Tono 2 (Miel)</option><option value="Tono 3">Tono 3 (Nogal)</option><option value="Tono 4">Tono 4 (Castaño)</option><option value="Tono 5">Tono 5 (Wengue)</option><option value="Tono 6">Tono 6 (Negro)</option><option value="✨ Otro Color Personalizado">✨ Otro Color Personalizado</option>
+                        </select>
+                        <label class="block text-[11px] uppercase text-hl-wood font-bold mb-1">Medida u Opción:</label>
+                        <select id="select-${prod.id}" onchange="updatePrice('${prod.id}')" class="w-full bg-[#F7F3EB] border border-hl-sand text-hl-dark text-xs p-2.5 rounded font-semibold mb-4">${optionsHtml}</select>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 pt-3 border-t border-hl-sand/40 flex items-center justify-between bg-[#F7F3EB]/50">
+                    <div><span class="text-[10px] text-hl-wood block">Precio</span><span id="price-${prod.id}" class="text-2xl font-brand text-hl-dark">S/ ${prod.options[0].price.toLocaleString('es-PE')}</span></div>
+                    <button onclick="sendWhatsApp('${prod.id}')" class="bg-hl-dark hover:bg-hl-wood text-hl-cream text-xs px-4 py-3 rounded font-semibold transition"><i class="fab fa-whatsapp"></i> Pedir</button>
+                </div>`;
+            grid.appendChild(card);
+        });
+
+        function updatePrice(id) {
+            const p = products.find(x => x.id === id);
+            const sel = document.getElementById(`select-${id}`).value;
+            document.getElementById(`price-${id}`).textContent = `S/ ${p.options[sel].price.toLocaleString('es-PE')}`;
+        }
+        function sendWhatsApp(id) {
+            const p = products.find(x => x.id === id);
+            const sel = document.getElementById(`select-${id}`).value;
+            const tono = document.getElementById(`tono-${id}`).value;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=` + encodeURIComponent(`Hola HL Design, deseo cotizar:\n• Producto: ${p.title}\n• Opción: ${p.options[sel].label}\n• Tono: ${tono}\n• Precio: S/ ${p.options[sel].price.toLocaleString('es-PE')}`), '_blank');
+        }
+        function openLightbox(src) { document.getElementById('lightbox-img').src = src; document.getElementById('lightbox-modal').classList.remove('hidden'); }
+        function closeLightbox() { document.getElementById('lightbox-modal').classList.add('hidden'); }
+    </script>
+</body>
+</html>
