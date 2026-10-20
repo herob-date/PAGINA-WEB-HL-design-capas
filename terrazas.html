@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muebles de Terraza y Exterior a Medida en Lima | HL Design</title>
+    <meta name="description" content="Catálogo de muebles de terraza, seccionales y tumbonas en madera tratada y lino impermeable con protección UV. Fabricación a medida en Lima y envíos a todo el Perú.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Source+Serif+4:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { hl: { cream: '#E4D1AC', sand: '#CEBFAB', wood: '#6B371D', dark: '#402E20', terracotta: '#C9745A', sage: '#ADB698', light: '#F7F3EB' } } } }
+        }
+    </script>
+    <style>
+        body { font-family: 'Source Serif 4', serif; background-color: #F7F3EB; color: #402E20; }
+        h1, h2, h3, .font-brand { font-family: 'Aoboshi One', serif; }
+        .hl-logo-box { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; position: relative; line-height: 1; }
+        .hl-logo-letters { font-family: 'Aoboshi One', serif; font-size: 2.6rem; letter-spacing: 0.12em; color: #402E20; font-weight: bold; }
+        .hl-logo-band { background-color: #F7F3EB; padding: 1px 6px; position: absolute; top: 50%; transform: translateY(-50%); width: 105%; text-align: center; font-family: 'Source Serif 4', serif; font-size: 0.55rem; letter-spacing: 0.42em; color: #402E20; font-weight: 600; text-indent: 0.42em; }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-[#F7F3EB]/95 backdrop-blur-md sticky top-0 z-40 border-b border-hl-sand/60">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="hl-logo-box"><span class="hl-logo-letters">HL</span><span class="hl-logo-band">DESIGN</span></a>
+            <nav class="hidden lg:flex space-x-6 text-sm font-semibold text-hl-dark">
+                <a href="index.html" class="hover:text-hl-terracotta">Inicio</a>
+                <a href="terrazas.html" class="text-hl-wood font-bold">Terrazas</a>
+                <a href="comedores.html" class="hover:text-hl-terracotta">Comedores</a>
+                <a href="salas-mesas.html" class="hover:text-hl-terracotta">Mesas & Consolas</a>
+            </nav>
+            <a href="https://wa.me/51966327706?text=Hola%20HL%20Design,%20deseo%20cotizar%20muebles%20de%20Terraza." target="_blank" class="bg-hl-dark text-hl-cream text-xs px-5 py-2.5 rounded uppercase font-semibold"><i class="fab fa-whatsapp"></i> Cotizar</a>
+        </div>
+        <div class="flex lg:hidden overflow-x-auto whitespace-nowrap bg-hl-dark text-hl-cream px-4 py-2 space-x-6 text-xs font-semibold uppercase tracking-wider">
+            <a href="index.html">Inicio</a>
+            <a href="terrazas.html" class="text-hl-cream">Terrazas</a>
+            <a href="comedores.html">Comedores</a>
+            <a href="salas-mesas.html">Mesas & Consolas</a>
+        </div>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-hl-terracotta uppercase tracking-widest text-xs font-bold">Catálogo de Alta Gama</span>
+            <h1 class="text-3xl md:text-5xl mt-2 mb-3 text-hl-dark font-brand">Muebles de Terraza y Exterior Resistentes</h1>
+            <p class="text-hl-wood/90 text-sm">Fabricados en madera tratada con telas impermeables con protección UV y alta resistencia a la intemperie en Lima.</p>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+    <div id="lightbox-modal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4 cursor-pointer" onclick="closeLightbox()">
+        <div class="relative max-w-4xl max-h-[90vh]">
+            <button class="absolute -top-10 right-0 text-white text-3xl font-bold">&times;</button>
+            <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] object-contain rounded shadow-2xl">
+        </div>
+    </div>
+
+    <script>
+        const WHATSAPP_NUMBER = "51966327706";
+        const products = [
+            { id: "ter-cala", badge: "Colección 2027", title: "Juego de Sala para Terraza Colección Cala", subtitle: "Madera y Lino Impermeable UV", desc: "Sofás de exterior con resistencia a la decoloración y soporte impermeable.", img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=80", options: [{ label: "Juego 3/2/1", price: 5600 }, { label: "Juego 3/1/1", price: 4850 }, { label: "Sofá 3 Personas", price: 2950 }, { label: "Sofá 2 Personas", price: 2450 }] },
+            { id: "ter-santorini", badge: "Premium", title: "Muebles de Terraza Colección Santorini", subtitle: "Diseño Orgánico y Confort", desc: "Sofás con apoyabrazos anchos de madera y cojinería completa impermeable en Lima.", img: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=700&q=80", options: [{ label: "Juego 3/2/1", price: 6800 }, { label: "Juego 3/1/1", price: 5900 }, { label: "Sofá 3 Personas", price: 3500 }] },
+            { id: "ter-mikonos", badge: "Top Terrazas", title: "Seccional de Terraza Colección Mikonos", subtitle: "Seccionales Modulares", desc: "Módulos bajos contemporáneos ideales para terrazas amplias y casas de playa.", img: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=700&q=80", options: [{ label: "Seccional A", price: 4950 }, { label: "Seccional B", price: 5500 }, { label: "Seccional C", price: 4150 }] }
+        ];
+
+        const grid = document.getElementById('product-grid');
+        products.forEach(prod => {
+            const optionsHtml = prod.options.map((opt, i) => `<option value="${i}">${opt.label} — S/ ${opt.price.toLocaleString('es-PE')}</option>`).join('');
+            const card = document.createElement('div');
+            card.className = "bg-white border border-hl-sand/80 rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between";
+            card.innerHTML = `
+                <div>
+                    <div class="h-64 bg-hl-cream/30 relative overflow-hidden group cursor-pointer" onclick="openLightbox('${prod.img}')">
+                        <img src="${prod.img}" alt="${prod.title} - ${prod.subtitle} en Lima" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-hl-dark text-hl-cream text-[11px] uppercase px-3 py-1 font-semibold">${prod.badge}</span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-hl-terracotta font-semibold uppercase">${prod.subtitle}</span>
+                        <h3 class="text-xl text-hl-dark mt-1 mb-2">${prod.title}</h3>
+                        <p class="text-xs text-hl-dark/80 mb-4">${prod.desc}</p>
+                        <label class="block text-[11px] uppercase text-hl-wood font-bold mb-1">Elige Tono de Madera:</label>
+                        <select id="tono-${prod.id}" class="w-full bg-[#F7F3EB] border border-hl-sand text-hl-dark text-xs p-2 rounded mb-2">
+                            <option value="Tono 1">Tono 1 (Claro Natural)</option><option value="Tono 2">Tono 2 (Miel)</option><option value="Tono 3">Tono 3 (Nogal)</option><option value="Tono 4">Tono 4 (Castaño)</option><option value="Tono 5">Tono 5 (Wengue)</option><option value="Tono 6">Tono 6 (Negro)</option><option value="✨ Otro Color Personalizado">✨ Otro Color Personalizado</option>
+                        </select>
+                        <label class="block text-[11px] uppercase text-hl-wood font-bold mb-1">Medida u Opción:</label>
+                        <select id="select-${prod.id}" onchange="updatePrice('${prod.id}')" class="w-full bg-[#F7F3EB] border border-hl-sand text-hl-dark text-xs p-2.5 rounded font-semibold mb-4">${optionsHtml}</select>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 pt-3 border-t border-hl-sand/40 flex items-center justify-between bg-[#F7F3EB]/50">
+                    <div><span class="text-[10px] text-hl-wood block">Precio</span><span id="price-${prod.id}" class="text-2xl font-brand text-hl-dark">S/ ${prod.options[0].price.toLocaleString('es-PE')}</span></div>
+                    <button onclick="sendWhatsApp('${prod.id}')" class="bg-hl-dark hover:bg-hl-wood text-hl-cream text-xs px-4 py-3 rounded font-semibold transition"><i class="fab fa-whatsapp"></i> Pedir</button>
+                </div>`;
+            grid.appendChild(card);
+        });
+
+        function updatePrice(id) { const p = products.find(x => x.id === id); const sel = document.getElementById(`select-${id}`).value; document.getElementById(`price-${id}`).textContent = `S/ ${p.options[sel].price.toLocaleString('es-PE')}`; }
+        function sendWhatsApp(id) { const p = products.find(x => x.id === id); const sel = document.getElementById(`select-${id}`).value; const tono = document.getElementById(`tono-${id}`).value; window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=` + encodeURIComponent(`Hola HL Design, deseo cotizar:\n• Producto: ${p.title}\n• Opción: ${p.options[sel].label}\n• Tono: ${tono}\n• Precio: S/ ${p.options[sel].price.toLocaleString('es-PE')}`), '_blank'); }
+        function openLightbox(src) { document.getElementById('lightbox-img').src = src; document.getElementById('lightbox-modal').classList.remove('hidden'); }
+        function closeLightbox() { document.getElementById('lightbox-modal').classList.add('hidden'); }
+    </script>
+</body>
+</html>
